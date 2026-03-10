@@ -16,7 +16,6 @@ interface QRModePageProps {
 }
 
 const getWhatsAppLink = (phone = "") => `https://wa.me/${phone.replace(/\D/g, "")}`;
-const shareQrUrl = "https://qr.sphereoffice92.com";
 
 const QRModePage = ({ business }: QRModePageProps) => {
   const isOpenNow = useMemo(() => isBusinessOpenNow(business?.openingHours || ""), [business?.openingHours]);
@@ -98,34 +97,6 @@ const QRModePage = ({ business }: QRModePageProps) => {
           </div>
 
           <div className="space-y-4 lg:col-span-5 xl:col-span-4">
-            <motion.section
-              className={`relative overflow-hidden rounded-2xl border p-4 ${themeStyles.card}`}
-              initial={{ opacity: 0, y: 14 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.35 }}
-            >
-              <div className={`pointer-events-none absolute inset-0 ${themeStyles.cardOverlay}`} />
-              <div className="relative flex flex-col items-center gap-3 text-center">
-                <img
-                  alt="QR code Sphere Office"
-                  className="h-44 w-44 rounded-[28px] bg-white p-3 shadow-xl shadow-slate-950/10"
-                  src="/qr-sphereoffice92.svg"
-                />
-                <div className="space-y-1">
-                  <p className={`text-xs font-semibold uppercase tracking-[0.14em] ${themeStyles.muted}`}>QR Code</p>
-                  <p className={`text-sm ${themeStyles.body}`}>Scannez pour ouvrir la carte digitale Sphere Office.</p>
-                </div>
-                <a
-                  className={`inline-flex min-h-11 items-center justify-center rounded-xl border px-3 text-sm font-semibold transition active:scale-[0.98] ${themeStyles.secondaryButton}`}
-                  href={shareQrUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  qr.sphereoffice92.com
-                </a>
-              </div>
-            </motion.section>
 
             <SocialLinks business={business} themeStyles={themeStyles} />
 

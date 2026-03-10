@@ -1,4 +1,4 @@
-﻿import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { FaBuilding, FaCheckCircle, FaRegClock } from "react-icons/fa";
 import type { PublicBusiness } from "./public-page.types";
 import type { QRThemeStyles } from "./qrTheme";
@@ -11,7 +11,7 @@ interface HeroSectionProps {
 
 export const HeroSection = ({ business, isOpenNow, themeStyles }: HeroSectionProps) => {
   const accent = business.accentColor || "#14b8a6";
-  const baseline = business.description || "Scannez, contactez, collaborez en quelques secondes.";
+  const baseline = business.description || "Contactez, decouvrez et collaborez en quelques secondes.";
   const isLight = themeStyles.pageRoot.includes("text-slate-900");
 
   return (
@@ -38,7 +38,7 @@ export const HeroSection = ({ business, isOpenNow, themeStyles }: HeroSectionPro
             </div>
 
             <div className="min-w-0">
-              <p className={`text-[10px] uppercase tracking-[0.24em] ${themeStyles.muted}`}>QR Business Card</p>
+              <p className={`text-[10px] uppercase tracking-[0.24em] ${themeStyles.muted}`}>Carte digitale</p>
               <h1 className={`mt-1 truncate text-2xl font-bold leading-tight sm:text-3xl lg:text-4xl ${themeStyles.title}`}>{business.name}</h1>
             </div>
           </div>
@@ -66,4 +66,3 @@ export const HeroSection = ({ business, isOpenNow, themeStyles }: HeroSectionPro
     </motion.section>
   );
 };
-
