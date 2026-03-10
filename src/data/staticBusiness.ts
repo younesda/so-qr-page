@@ -1,9 +1,9 @@
-﻿import { normalizePublicBusiness, type PublicBusiness } from "@/components/public/public-page.types";
+import { normalizePublicBusiness, type PublicBusiness } from "@/components/public/public-page.types";
 
 const business: PublicBusiness = normalizePublicBusiness({
   id: 2,
   slug: "sphere-office-1",
-  name: "Sphère Office",
+  name: "Sph\u00e8re Office",
   description: "Equipez votre espace de travail avec style et efficacite",
   phone: "+221 33 848 46 68",
   whatsapp: "+221775414590",
@@ -20,7 +20,7 @@ const business: PublicBusiness = normalizePublicBusiness({
   telegram: "",
   snapchat: "",
   pinterest: "",
-  openingHours: "Lundi - Vendredi: 10h - 19h\nSamedi: 10h - 17h\nDimanche: Ferme",
+  openingHours: "Lundi - Samedi: 8h-19h\nDimanche: Ferme",
   siteMode: "qr",
   theme: "light",
   heroTitle: "",

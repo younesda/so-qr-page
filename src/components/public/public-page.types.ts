@@ -1,4 +1,4 @@
-﻿export type QRTheme = "dark" | "light" | "gradient";
+export type QRTheme = "dark" | "light" | "gradient";
 
 export interface ServiceItem {
   title: string;
@@ -74,10 +74,10 @@ export const isBusinessOpenNow = (openingHours = "") => {
   const normalized = openingHours.toLowerCase();
   if (normalized.includes("24/7") || normalized.includes("24h")) return true;
 
-  const match = normalized.match(/(\d{1,2})[:h](\d{2})\s*[-a]\s*(\d{1,2})[:h](\d{2})/);
+  const match = normalized.match(/(\d{1,2})(?:[:h](\d{2}))?h?\s*(?:-|a)\s*(\d{1,2})(?:[:h](\d{2}))?h?/);
   if (!match) return null;
 
-  const [, startHourRaw, startMinRaw, endHourRaw, endMinRaw] = match;
+  const [, startHourRaw, startMinRaw = "00", endHourRaw, endMinRaw = "00"] = match;
   const now = new Date();
   const minutesNow = now.getHours() * 60 + now.getMinutes();
   const start = Number(startHourRaw) * 60 + Number(startMinRaw);
